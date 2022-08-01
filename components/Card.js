@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image'
 import { ThumbUpIcon } from "@heroicons/react/outline";
 import { useState } from "react";
 
@@ -14,7 +14,7 @@ export default function Card({ result }) {
 				width={200}
 				height={100}
 				alt={result.title || result.name}
-				className={`duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}`}
+				className={`w-full  duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}`}
 				onLoadingComplete={() => setLoading(false)}
 			/>
 			<div className="p-2">

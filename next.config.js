@@ -4,7 +4,12 @@ const nextConfig = {
 	swcMinify: true,
 	images: {
 		domains: ['upload.wikimedia.org', 'image.tmdb.org']
-	}
+	},
+	experimental: {
+		images: {
+			allowFutureImage: true,
+		},
+	},
 }
 
 module.exports = nextConfig
