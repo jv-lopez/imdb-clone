@@ -1,8 +1,11 @@
 import Image from "next/image";
 import { ThumbUpIcon } from "@heroicons/react/outline";
+import { useState } from "react";
 
 export default function Card({ result }) {
 	const BASE_URL = "https://image.tmdb.org/t/p/original";
+	const [isLoading, setLoading] = useState(true)
+
 	return (
 		<div className="p-3 cursor-pointer hover:text-white active:text-red-400 xl:hover:scale-105 transition-transform duration-200">
 			<Image
@@ -11,6 +14,8 @@ export default function Card({ result }) {
 				width={200}
 				height={100}
 				alt={result.title || result.name}
+				className={`duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? 'scale-110 blur-2xl grayscale' : 'scale-100 blur-0 grayscale-0'}`}
+				onLoadingComplete={() => setLoading(false)}
 			/>
 			<div className="p-2">
 				<p className="truncate text-lg">{result.overview}</p>
