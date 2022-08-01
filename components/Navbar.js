@@ -1,5 +1,5 @@
 import React from 'react'
-import requests from '../utils/request'
+import requests from '../utils/requests'
 import { useRouter } from 'next/router'
 
 export default function Navbar() {
